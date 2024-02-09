@@ -1,0 +1,41 @@
+[  {
+    "urlref": "/thematic/models/person",
+    "repository": "https://github.com/bertvannuffelen/semiceuthema",
+    "branchtag": "master",
+    "name": "iceg-person-ap",
+    "filename": "config/iceg-person.json",
+    "navigation": {}
+  },
+  {
+    "urlref": "/thematic/models/person-voc",
+    "repository": "https://github.com/bertvannuffelen/semiceuthema",
+    "branchtag": "master",
+    "name": "iceg-person-voc",
+    "filename": "config/iceg-person.json",
+    "navigation": {}
+  },
+  {
+    "urlref": "/thematic/models/public-service",
+    "repository": "https://github.com/bertvannuffelen/semiceuthema",
+    "branchtag": "master",
+    "name": "iceg-public-service",
+    "filename": "config/iceg-public-service.json",
+    "navigation": {}
+  },
+  {
+    "urlref": "/thematic/models/building",
+    "repository": "https://github.com/bertvannuffelen/semiceuthema",
+    "branchtag": "master",
+    "name": "iceg-building",
+    "filename": "config/iceg-building.json",
+    "navigation": {}
+  },
+  {
+    "urlref": "/thematic/models/public-organisation",
+    "repository": "https://github.com/bertvannuffelen/semiceuthema",
+    "branchtag": "master",
+    "name": "iceg-public-organisation",
+    "filename": "config/iceg-public-organisation.json",
+    "navigation": {}
+  } 
+]
