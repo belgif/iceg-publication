@@ -3,14 +3,14 @@
   "otherLanguages": [
     "fr", "de"
   ],
-  "hostname": "https://dev.specs.org/",
-  "domain": "data.spec.org",
+  "hostname": "https://belgif.github.io/",
+  "domain": "vocab.belgif.be",
   "publicationpoints" : ["dev"],
   "generatedrepository" : {
-	  "organisation": "GitHubOrganisation",
-	  "repository" : "GeneratedRepository",
+	  "organisation": "belgif",
+	  "repository" : "iceg-generated",
 	  "private" : false,
-	  "gitEmail" : "toolchain@dev.specs.org",
+	  "gitEmail" : "toolchain@belgif.be",
 	  "gitUser" : "toolchain"
   },
   "toolchainversion" : "3.1.1",

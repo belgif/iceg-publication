@@ -548,6 +548,6 @@ workflows:
             - render-context-details
             - render-voc-rdf
       - create-artifact:
-          generatedReporFingerprint: "$$SSHKEYFINGERPRINT"
+          generatedReporFingerprint: SHA256:8ro0m8y/at1eaIkXKNTSDWW70J8qNW9OXRhw6BFR2/k	
           requires:
             - expand-links
