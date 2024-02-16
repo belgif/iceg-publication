@@ -171,7 +171,6 @@
                 </dl>
               </div>
 
-
             </div>
           </div>
         </div>
@@ -222,6 +221,7 @@
               <h2 class="h2" id="conformance" aria-level="1" role="heading">Conformance</h2>
               {% block conformance %}
               <p>To be defined</p>
+              {% endblock %}
             </div>
 
             {# <div class="region region--no-space-top typography" id="license">
@@ -238,7 +238,7 @@
                   {% if ( ( classes | length > 0) ) %}
                   <div class="region region--no-space-top">
                     <p>This document describes the usage of the following entities for a correct usage of the application profile:
-                      <br />
+                      <br>
                       |
                       {%- for class in classes |sort(attribute=sortattr) %}
                       <a href="#{{ class.name }}">{{ class.label[language] }}</a> |
@@ -249,7 +249,7 @@
                   {% if ( ( datatypes | length ) > 0 ) %}
                   <div class="region region--no-space-top">
                     <p>This document describes the usage of the following datatypes for a correct usage of the application profile:
-                      <br />
+                      <br>
                       |
                       {%- for datatype in datatypes |sort(attribute=sortattr) %}
                       <a href="#{{ datatype.name }}">{{ datatype.label[language] }}</a> |
