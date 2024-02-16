@@ -24,10 +24,10 @@
   },
   {
     "urlref": "/thematic/models/building",
-    "repository": "https://github.com/bertvannuffelen/semiceuthema",
-    "branchtag": "master",
-    "name": "iceg-building",
-    "filename": "config/iceg-building.json",
+    "repository": "https://github.com/belgif/ICEGthema-building",
+    "branchtag": "main",
+    "name": "Building Base",
+    "filename": "config/building-base.json",
     "navigation": {}
   },
   {
