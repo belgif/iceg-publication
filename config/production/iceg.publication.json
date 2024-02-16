@@ -26,8 +26,9 @@
     "urlref": "/thematic/models/building",
     "repository": "https://github.com/belgif/ICEGthema-building",
     "branchtag": "main",
-    "name": "Building Base",
+    "name": "building-base",
     "filename": "config/building-base.json",
+    "dummy": "001",
     "navigation": {}
   },
   {
