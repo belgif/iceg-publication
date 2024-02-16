@@ -5,7 +5,7 @@
   ],
   "hostname": "https://belgif.github.io/",
   "domain": "vocab.belgif.be",
-  "publicationpoints" : ["production"],
+  "publicationpoints" : ["dev"],
   "generatedrepository" : {
 	  "organisation": "belgif",
 	  "repository" : "iceg-generated",
