@@ -1,11 +1,11 @@
 {
   "primeLanguage": "en",
   "otherLanguages": [
-    "fr", "de"
+    "fr", "de", "nl"
   ],
   "hostname": "https://belgif.github.io/",
   "domain": "vocab.belgif.be",
-  "publicationpoints" : ["dev"],
+  "publicationpoints" : ["production"],
   "generatedrepository" : {
 	  "organisation": "belgif",
 	  "repository" : "iceg-generated",
