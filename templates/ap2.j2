@@ -42,8 +42,8 @@
 
   <div style="min-height:44px;;" id="duet-header" class="header">
     <!-- insert your global header here -->
-    <title>SEMIC</title>
-    <i class="logo">SEMIC logo</i>
+    <title>Belgif</title>
+    <i class="logo">Belgif logo</i>
     <!-- end global header-->
   </div>
 
@@ -183,21 +183,6 @@
         <div class="grid">
           <div class="col--8-12 col--12-12--s">
 
-            <div class="region region--no-space-top typography" id="status">
-              <section class="introductory" id="sotd" typeof="bibo:Chapter" resource="#ref" rel="bibo:Chapter">
-                <h2 class="h2" aria-level="1" role="heading" id="h2_sotd">Status of this document</h2>
-                {% block status %}
-                <p>
-                  This application profile has the status <a href="{{metadata.status }}">{{ metadata.statuslabel }}</a> and was published at {{ metadata.issued }}.
-                </p>
-                {# <p>
-                  Information about the process and the decisions involved in the creation of this specification are consultable at the
-                  <a href="{{metadata.standaardregisterurl}}">registry of standards</a>.
-                </p> #}
-                {% endblock %}
-              </section>
-            </div>
-
             {# <div class="region" id="introduction">
               <div class="introduction typography">
                 {% block introduction %}
@@ -218,11 +203,26 @@
               {% endblock %}
             </div>
 
-            {# <div class="region region--no-space-top typography" id="conformance">
+            <div class="region region--no-space-top typography" id="status">
+              <section class="introductory" id="sotd" typeof="bibo:Chapter" resource="#ref" rel="bibo:Chapter">
+                <h2 class="h2" aria-level="1" role="heading" id="h2_sotd">Status of this document</h2>
+                {% block status %}
+                <p>
+                  This application profile has the status <a href="{{metadata.status}}">{{ metadata.statuslabel }}</a> and was published at {{ metadata.issued }}.
+                </p>
+                {# <p>
+                  Information about the process and the decisions involved in the creation of this specification are consultable at the
+                  <a href="{{metadata.standaardregisterurl}}">registry of standards</a>.
+                </p> #}
+                {% endblock %}
+              </section>
+            </div>
+
+            <div class="region region--no-space-top typography" id="conformance">
               <h2 class="h2" id="conformance" aria-level="1" role="heading">Conformance</h2>
               {% block conformance %}
               <p>To be defined</p>
-            </div> #}
+            </div>
 
             {# <div class="region region--no-space-top typography" id="license">
               <h2 class="h2">License</h2>
@@ -450,14 +450,14 @@
             </div>
             <div class="region region--no-space-top" id="jsonld">
               <h2 class="h2" aria-level="1" role="heading" id="h2_sotd">JSON-LD context</h2>
-              (not normative)
+              (non-normative)
               {% block jsonld %}
               <p>A reusable JSON-LD context definition for this application profile is retrievable at:<a href="{{ documentroot }}/context/{{ metadata.filename }}.jsonld" target="_blank">{{ documentroot }}/context/{{ metadata.filename }}.jsonld</a></p>
               {% endblock %}
             </div>
             <div class="region region--no-space-top" id="shacl">
               <h2 class="h2" aria-level="1" role="heading" id="h2_sotd">SHACL template</h2>
-              (not normative)
+              (non-normative)
               {% block shacl%}
               <p>A reusable SHACL template for this application profile is retrievable at:<a href="{{ documentroot }}/shacl/{{ metadata.filename }}-SHACL.ttl" target="_blank">{{ documentroot }}/shacl/{{ metadata.filename }}-SHACL.ttl</a></p>
               {% endblock %}
@@ -472,17 +472,17 @@
                       <a href="#introduction">Introduction</a>
                     </li> #}
                     <li class="side-navigation__item">
-                      <a href="#status">Status of this document</a>
+                      <a href="#summary">Summary</a>
                     </li>
                     <li class="side-navigation__item">
-                      <a href="#summary">Summary</a>
+                      <a href="#status">Status of this document</a>
                     </li>
                     {# <li class="side-navigation__item">
                       <a href="#license">License</a>
                     </li> #}
-                    {# <li class="side-navigation__item">
+                    <li class="side-navigation__item">
                       <a href="#conformance">Conformance</a>
-                    </li> #}
+                    </li>
                     <li class="side-navigation__item">
                       <a href="#overview">Overview</a>
                     </li>
