@@ -183,17 +183,6 @@
         <div class="grid">
           <div class="col--8-12 col--12-12--s">
 
-            {# <div class="region" id="introduction">
-              <div class="introduction typography">
-                {% block introduction %}
-                <p>This document describes an <strong>application profile</strong>, in this case <strong>{{ metadata.title }}</strong>.
-                  The application profile specifies a semantic data model covering a set of usecases.
-                  The specification consists of terms with their constraints (cardinalities, codelists, usage guidelines).
-                </p>
-                {% endblock %}
-              </div>
-            </div> #}
-
             <div class="region region--no-space-top typography" id="summary">
               <h2 class="h2" aria-level="1" role="heading" id="h2_sotd">Summary</h2>
               {% block summary %}
@@ -208,7 +197,7 @@
                 <h2 class="h2" aria-level="1" role="heading" id="h2_sotd">Status of this document</h2>
                 {% block status %}
                 <p>
-                  This application profile has the status <a href="{{metadata.status}}">{{ metadata.statuslabel }}</a> and was published at {{ metadata.issued }}.
+                  This application profile has the status <a href="{{metadata.status }}">{{ metadata.statuslabel }}</a> and was published at {{ metadata.issued }}.
                 </p>
                 {# <p>
                   Information about the process and the decisions involved in the creation of this specification are consultable at the
@@ -217,6 +206,17 @@
                 {% endblock %}
               </section>
             </div>
+
+            {# <div class="region" id="introduction">
+              <div class="introduction typography">
+                {% block introduction %}
+                <p>This document describes an <strong>application profile</strong>, in this case <strong>{{ metadata.title }}</strong>.
+                  The application profile specifies a semantic data model covering a set of usecases.
+                  The specification consists of terms with their constraints (cardinalities, codelists, usage guidelines).
+                </p>
+                {% endblock %}
+              </div>
+            </div> #}
 
             <div class="region region--no-space-top typography" id="conformance">
               <h2 class="h2" id="conformance" aria-level="1" role="heading">Conformance</h2>
