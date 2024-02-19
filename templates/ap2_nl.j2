@@ -1,8 +1,8 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-{% set language = "en" %}
+{% set language = "nl" %}
 {% set sortattr = "sort" %}
 
-<html xml:lang="en" lang="en" dir="ltr" typeof="bibo:Document " about="" property="dcterms:language" content="en" prefix="dcterms: http://purl.org/dc/terms/ bibo: http://purl.org/ontology/bibo/ schema: http://schema.org/ w3p: http://www.w3.org/2001/02pd/rec54#" xmlns="http://www.w3.org/1999/xhtml">
+<html xml:lang="nl" lang="nl" dir="ltr" typeof="bibo:Document " about="" property="dcterms:language" content="nl" prefix="dcterms: http://purl.org/dc/terms/ bibo: http://purl.org/ontology/bibo/ schema: http://schema.org/ w3p: http://www.w3.org/2001/02pd/rec54#" xmlns="http://www.w3.org/1999/xhtml">
 
 <head>
   {% set name = metadata.title|lower|replace(' ', '-') %}
@@ -51,7 +51,7 @@
   <div class="page">
     <div class="layout layout--wide">
       <div class="skiplink">
-        <a rel="nofollow noreferrer" href="#main">Skip this section and go to general content</a>
+        <a rel="nofollow noreferrer" href="#main">Overslaan en naar de algemene inhoud gaan</a>
       </div>
     </div>
     <div class="page">
@@ -65,16 +65,16 @@
                 <dl>
                   <dt>Status</dt>
                   <dd><a href="{{metadata.status}}">{{metadata.status}}</a></dd>
-                  <dt>Published at</dt>
+                  <dt>Uitgegeven op</dt>
                   <dd>{{metadata.issued}}</dd>
-                  <dt>This version</dt>
+                  <dt>Deze versie</dt>
                   <dd><a href="{{metadata.navigation.self}}">{{metadata.navigation.self}}</a></dd>
                   {% if metadata.navigation.next %}
-                  <dt>Next version</dt>
+                  <dt>Volgende versie</dt>
                   <dd><a href="{{metadata.navigation.next}}">{{metadata.navigation.next}}</a></dd>
                   {% endif %}
                   {% if metadata.navigation.prev %}
-                  <dt>Previous version</dt>
+                  <dt>Vorige versie</dt>
                   <dd><a href="{{metadata.navigation.prev}}">{{metadata.navigation.prev}}</a></dd>
                   {% endif %}
                 </dl>
@@ -86,7 +86,7 @@
                   {% if role == "A" %}
                   {% set authors = contributors|sort(attribute='last_name') %}
                   {% if authors %}
-                  <dt>Authors</dt>
+                  <dt>Auteurs</dt>
                   {% for author in authors %}
                   <dd inlist="" rel="foaf:maker" class="p-author h-card vcard">
                     <span typeof="foaf:Person">
@@ -128,7 +128,7 @@
                   {% elif role == "C" %}
                   {% set pure_contributors = contributors|sort(attribute='last_name') %}
                   {% if pure_contributors %}
-                  <dt>Reviewed and approved by</dt>
+                  <dt>Medewerkers</dt>
                   {% for contributor in pure_contributors %}
                   <dd inlist="" rel="dcterms:contributor" class="p-author h-card vcard">
                     <span typeof="foaf:Person">
@@ -153,16 +153,16 @@
 
               <div class="head" role="metainfo" id="metainfo">
                 <dl>
-                  <dt>Source</dt>
+                  <dt>Brondata</dt>
                   <dd><a href="{{metadata.repositoryurl}}">{{metadata.repositoryurl}}</a></dd>
                   <dt>Changelog</dt>
                   <dd><a href="{{metadata.changelogurl}}">{{metadata.changelogurl}}</a></dd>
-                  <dt>Feedback</dt>
+                  <dt>Opmerkingen en feedback</dt>
                   <dd><a href="{{metadata.feedbackurl}}">{{metadata.feedbackurl}}</a></dd>
-                  {# <dt>Registry of specifications</dt>
+                  {# <dt>Standaardenregister</dt>
                   <dd><a href="{{metadata.standaardregisterurl}}">{{metadata.standaardregisterurl}}</a></dd> #}
 
-                  {# <dt>Dependencies</dt>
+                  {# <dt>Afhankelijkheden</dt>
                   <dd>
                     {% for dep in metadata.dependencies %}
                     <a href="{{ dep.packageurl }}">{{ dep.packagelabel }}</a>
@@ -183,7 +183,7 @@
           <div class="col--8-12 col--12-12--s">
 
             <div class="region region--no-space-top typography" id="summary">
-              <h2 class="h2" aria-level="1" role="heading" id="h2_sotd">Summary</h2>
+              <h2 class="h2" aria-level="1" role="heading" id="h2_sotd">Samenvatting</h2>
               {% block summary %}
               {% if metadata.description %}
               {{ metadata.description[language] }}
@@ -193,14 +193,14 @@
 
             <div class="region region--no-space-top typography" id="status">
               <section class="introductory" id="sotd" typeof="bibo:Chapter" resource="#ref" rel="bibo:Chapter">
-                <h2 class="h2" aria-level="1" role="heading" id="h2_sotd">Status of this document</h2>
+                <h2 class="h2" aria-level="1" role="heading" id="h2_sotd">Status van dit document</h2>
                 {% block status %}
                 <p>
-                  This application profile has the status <a href="{{metadata.status }}">{{ metadata.statuslabel }}</a> and was published at {{ metadata.issued }}.
+                  Dit applicatieprofiel heeft status <a href="{{metadata.status }}">{{ metadata.statuslabel }}</a> en werd uitgegeven op {{ metadata.issued }}.
                 </p>
                 {# <p>
-                  Information about the process and the decisions involved in the creation of this specification are consultable at the
-                  <a href="{{metadata.standaardregisterurl}}">registry of specifications</a>.
+                  Informatie over het gevolgde proces en de beslissingen om tot deze specificatie te komen zijn beschikbaar in het
+                  <a href="{{metadata.standaardregisterurl}}">standaardenregister</a>.
                 </p> #}
                 {% endblock %}
               </section>
@@ -209,35 +209,35 @@
             {# <div class="region" id="introduction">
               <div class="introduction typography">
                 {% block introduction %}
-                <p>This document describes an <strong>application profile</strong>, in this case <strong>{{ metadata.title }}</strong>.
-                  The application profile specifies a semantic data model covering a set of usecases.
-                  The specification consists of terms with their constraints (cardinalities, codelists, usage guidelines).
+                <p>Dit document beschrijft een <strong>applicatieprofiel</strong>, in dit geval <strong>{{ metadata.title }}</strong>.
+                Dit applicatieprofiel beantwoordt de vraag over hoe het corresponderende domeinmodel in de praktijk kan toegepast worden.
+                Daarbij worden de beperkingen (kardinaliteit, codelijsten) toegelicht en de overeenkomstige (RDF) termen opgelijst.
                 </p>
                 {% endblock %}
               </div>
             </div> #}
 
             <div class="region region--no-space-top typography" id="conformance">
-              <h2 class="h2" id="conformance" aria-level="1" role="heading">Conformance</h2>
+              <h2 class="h2" id="conformance" aria-level="1" role="heading">Conformiteit</h2>
               {% block conformance %}
-              <p>To be defined</p>
+              <p>Te bepalen</p>
               {% endblock %}
             </div>
 
             {# <div class="region region--no-space-top typography" id="license">
               <h2 class="h2">License</h2>
               {% block license %}
-              <p><span rel="dct:type" property="dct:title" href="http://purl.org/dc/dcmitype/Text" xmlns:dct="http://purl.org/dc/terms/">This specification</span> of <a rel="cc:attributionURL" property="cc:attributionName" href="ORGANISATION" xmlns:cc="http://creativecommons.org/ns#">ORGANISATION</a> is published under <a href="{{ metadata.license }}" rel="license">"CC-BY 4.0"</a>.</p>
+              <p><span rel="dct:type" property="dct:title" href="http://purl.org/dc/dcmitype/Text" xmlns:dct="http://purl.org/dc/terms/">Deze specificatie</span> van <a rel="cc:attributionURL" property="cc:attributionName" href="ORGANISATION" xmlns:cc="http://creativecommons.org/ns#">ORGANISATION</a> is gepubliceerd onder de <a href="{{ metadata.license }}" rel="license">"CC-BY 4.0"</a>.</p>
               {% endblock %}
             </div> #}
 
             <div class="region region--no-space-top" id="overview">
-              <h2 class="h2">Overview</h2>
+              <h2 class="h2">Overzicht</h2>
               <div class="grid">
                 <div class="col--9-12 col--1-1--s typography">
                   {% if ( ( classes | length > 0) ) %}
                   <div class="region region--no-space-top">
-                    <p>This document describes the usage of the following entities for a correct usage of the application profile:
+                    <p>In dit document wordt correct gebruik van de volgende entiteiten toegelicht:
                       <br>
                       |
                       {%- for class in classes |sort(attribute=sortattr) %}
@@ -248,7 +248,7 @@
                   {% endif %}
                   {% if ( ( datatypes | length ) > 0 ) %}
                   <div class="region region--no-space-top">
-                    <p>This document describes the usage of the following datatypes for a correct usage of the application profile:
+                    <p>In dit document worden de volgende datatypes toegelicht:
                       <br>
                       |
                       {%- for datatype in datatypes |sort(attribute=sortattr) %}
@@ -269,21 +269,21 @@
               {% endblock %}
             </div>
             <div class="region region--no-space-top">
-              <h2 class="h2">Entities</h2>
+              <h2 class="h2">Entiteiten</h2>
             </div>
             {% for entity in classes | sort(attribute=sortattr) %}
             <div class="region region--no-space-top">
               <h3 class="h3" id="{{ entity.name }}"><a href="{{ entity.uri }}" data-toggle="tooltip" data-content="{{ entity.uri }}" data-placement="right">{{ entity.label[language] }}</a></h3>
               <div class="region region--no-space-top">
                 <dl>
-                  <dt>Definition</dt>
+                  <dt>Definitie</dt>
                   <dd>{{ entity.description[language] }}</dd>
                   {% if entity.usage[language] %}
-                  <dt>Usage</dt>
+                  <dt>Gebruik</dt>
                   <dd>{{ entity.usage[language] | safe }}</dd>
                   {% endif %}
                   {% if ((entity.parents | length) > 0 ) %}
-                  <dt>Subclass of
+                  <dt>Subklasse van
                   <dt>
                   <dd>
                     {%- for parent in entity['parents'] %}
@@ -291,15 +291,15 @@
                     {%- endfor %}
                   </dd>
                   {% endif %}
-                  <dt>Properties</dt>
+                  <dt>Eigenschappen</dt>
                   {% if ((entity.properties | length) > 0 ) %}
-                  <dd>For this entity the following properties are defined:
+                  <dd>Voor deze entiteit zijn de volgende eigenschappen gedefinieerd:
                     {%- for prop in entity['properties'] | sort(attribute=sortattr) %}
                     <a href="#{{ (entity.name ~ ':' ~ prop.name) | urlencode }}">{{ prop.label[language] }}</a>{% if not loop.last %}, {% endif %}
                     {%- endfor %}.
                   </dd>
                   {% else %}
-                  <dd>No properties have been defined for this entity.</dd>
+                  <dd>>Voor deze entiteit zijn geen eigenschappen gedefinieerd.</dd>
                   {% endif %}
                 </dl>
               </div>
@@ -308,18 +308,18 @@
                 <table class="data-table">
                   <thead>
                     <tr class="data-table__header">
-                      <th class="data-table__header-title--sortable data-table__header-title--sortable-active">Property</th>
-                      <th class="data-table__header-title--sortable">Expected Range</th>
-                      <th class="data-table__header-title--sortable">Cardinality</th>
-                      <th class="data-table__header-title--sortable">Definition</th>
-                      <th class="data-table__header-title--sortable">Usage</th>
-                      <th class="data-table__header-title--sortable">Codelist</th>
+                      <th class="data-table__header-title--sortable data-table__header-title--sortable-active">Eigenschap</th>
+                      <th class="data-table__header-title--sortable">Verwacht Type</th>
+                      <th class="data-table__header-title--sortable">Kardinaliteit</th>
+                      <th class="data-table__header-title--sortable">Definitie</th>
+                      <th class="data-table__header-title--sortable">Gebruik</th>
+                      <th class="data-table__header-title--sortable">Codelijst</th>
                     </tr>
                   </thead>
 
                   <tbody class="supertype">
                     {% for prop in entity['properties'] | sort(attribute=sortattr) %}
-                    <tr id="{{ (entity.name ~ ':' ~ prop.name) | urlencode }}" typeof="rdfs:Property" resource="{{ prop.uri }}">
+                    <tr id="{{ (entity.name ~ ':' ~ prop.name) | urlencode }}" typeof="rdfs:Eigenschap" resource="{{ prop.uri }}">
                       <td>
                         <code property="rdfs:label">
                             <a href="{{ prop.uri }}" data-toggle="tooltip" data-content="{{ prop.uri }}" data-placement="right">
@@ -361,14 +361,14 @@
               {% endif %}
               <div class="region region--no-space-top">
                 <dl>
-                  <dt>Definition</dt>
+                  <dt>Definitie</dt>
                   <dd>{{ entity.description[language] }}</dd>
                   {% if entity.usage[language] %}
-                  <dt>Usage</dt>
+                  <dt>Gebruik</dt>
                   <dd>{{ entity.usage[language] | safe }}</dd>
                   {% endif %}
                   {% if ((entity.parents | length) > 0 ) %}
-                  <dt>Subclass of
+                  <dt>Subklasse van
                   <dt>
                   <dd>
                     {%- for parent in entity['parents'] %}
@@ -376,15 +376,15 @@
                     {%- endfor %}
                   </dd>
                   {% endif %}
-                  <dt>Properties</dt>
+                  <dt>Eigenschappen</dt>
                   {% if ((entity.properties | length) > 0 ) %}
-                  <dd>For this datatype the following properties are defined:
+                  <dd>Voor dit datatype zijn de volgende eigenschappen gedefinieerd:
                     {%- for prop in entity['properties'] | sort(attribute=sortattr) %}
                     <a href="#{{ (entity.name ~ ':' ~ prop.name) | urlencode }}">{{ prop.label[language] }}</a>{% if not loop.last %}, {% endif %}
                     {%- endfor %}.
                   </dd>
                   {% else %}
-                  <dd>No properties have been defined for this datatype.</dd>
+                  <dd>Voor dit datatype zijn geen eigenschappen gedefinieerd.</dd>
                   {% endif %}
                 </dl>
               </div>
@@ -393,18 +393,18 @@
                 <table class="data-table">
                   <thead>
                     <tr class="data-table__header">
-                      <th class="data-table__header-title--sortable data-table__header-title--sortable-active">Property</th>
-                      <th class="data-table__header-title--sortable">Expected Range</th>
-                      <th class="data-table__header-title--sortable">Cardinality</th>
-                      <th class="data-table__header-title--sortable">Definition</th>
-                      <th class="data-table__header-title--sortable">Usage</th>
-                      <th class="data-table__header-title--sortable">Codelist</th>
+                      <th class="data-table__header-title--sortable data-table__header-title--sortable-active">Eigenschap</th>
+                      <th class="data-table__header-title--sortable">Verwacht Type</th>
+                      <th class="data-table__header-title--sortable">Kardinaliteit</th>
+                      <th class="data-table__header-title--sortable">Definitie</th>
+                      <th class="data-table__header-title--sortable">Gebruik</th>
+                      <th class="data-table__header-title--sortable">Codelijst</th>
                     </tr>
                   </thead>
 
                   <tbody class="supertype">
                     {% for prop in entity['properties'] | sort(attribute=sortattr) %}
-                    <tr id="{{ (entity.name ~ ':' ~ prop.name ) | urlencode }}" typeof="rdfs:Property" resource="{{ prop.uri }}">
+                    <tr id="{{ (entity.name ~ ':' ~ prop.name ) | urlencode }}" typeof="rdfs:Eigenschap" resource="{{ prop.uri }}">
                       <td>
                         <code property="rdfs:label">
                             <a href="{{ prop.uri }}" data-toggle="tooltip" data-content="{{ prop.uri }}" data-placement="right">{{ prop.label[language] }}</a>
@@ -433,16 +433,16 @@
             {% endfor %}
             {% endif %}
             <div class="region region--no-space-top" id="codelists">
-              <h2 class="h2" aria-level="1" role="heading" id="h2_sotd">Lists</h2>
-              (non-normative)
+              <h2 class="h2" aria-level="1" role="heading" id="h2_sotd">Lijsten</h2>
+              (niet normatief)
 
               {% block codelist %}
               {% endblock %}
             </div>
 
             <div class="region region--no-space-top" id="changelog">
-              <h2 class="h2" aria-level="1" role="heading" id="h2_sotd">Changelog w.r.t. previous version</h2>
-              (non-normative)
+              <h2 class="h2" aria-level="1" role="heading" id="h2_sotd">Changelog</h2>
+              (niet normatief)
               {% block changelog %}
               <br>
               <p>placeholder</p>
@@ -450,16 +450,16 @@
             </div>
             <div class="region region--no-space-top" id="jsonld">
               <h2 class="h2" aria-level="1" role="heading" id="h2_sotd">JSON-LD context</h2>
-              (non-normative)
+              (niet normatief)
               {% block jsonld %}
-              <p>A reusable JSON-LD context definition for this application profile is retrievable at: <a href="{{ documentroot }}/context/{{ metadata.filename }}.jsonld" target="_blank">{{ documentroot }}/context/{{ metadata.filename }}.jsonld</a></p>
+              <p>Een herbruikbare JSON-LD context definitie voor dit applicatieprofiel is terug te vinden op: <a href="{{ documentroot }}/context/{{ metadata.filename }}.jsonld" target="_blank">{{ documentroot }}/context/{{ metadata.filename }}.jsonld</a></p>
               {% endblock %}
             </div>
             <div class="region region--no-space-top" id="shacl">
               <h2 class="h2" aria-level="1" role="heading" id="h2_sotd">SHACL template</h2>
-              (non-normative)
+              (niet normatief)
               {% block shacl%}
-              <p>A reusable SHACL template for this application profile is retrievable at: <a href="{{ documentroot }}/shacl/{{ metadata.filename }}-SHACL.ttl" target="_blank">{{ documentroot }}/shacl/{{ metadata.filename }}-SHACL.ttl</a></p>
+              <p>Een herbruikbare SHACL template definitie voor dit applicatieprofiel is terug te vinden op: <a href="{{ documentroot }}/shacl/{{ metadata.filename }}-SHACL.ttl" target="_blank">{{ documentroot }}/shacl/{{ metadata.filename }}-SHACL.ttl</a></p>
               {% endblock %}
             </div>
           </div>
@@ -469,25 +469,25 @@
                 <div class="side-navigation__group">
                   <ul>
                     {# <li class="side-navigation__item">
-                      <a href="#introduction">Introduction</a>
+                      <a href="#introduction">Inleiding</a>
                     </li> #}
                     <li class="side-navigation__item">
-                      <a href="#summary">Summary</a>
+                      <a href="#summary">Samenvatting</a>
                     </li>
                     <li class="side-navigation__item">
-                      <a href="#status">Status of this document</a>
+                      <a href="#status">Status van dit document</a>
                     </li>
                     {# <li class="side-navigation__item">
-                      <a href="#license">License</a>
+                      <a href="#license">Licentie</a>
                     </li> #}
                     <li class="side-navigation__item">
-                      <a href="#conformance">Conformance</a>
+                      <a href="#conformance">Conformiteit</a>
                     </li>
                     <li class="side-navigation__item">
-                      <a href="#overview">Overview</a>
+                      <a href="#overview">Overzicht</a>
                     </li>
                     <li class="side-navigation__item">
-                      <a href="#codelists">Lists</a>
+                      <a href="#codelists">Lijsten</a>
                     </li>
                     <li class="side-navigation__item">
                       <a href="#changelog">Changelog</a>

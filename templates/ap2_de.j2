@@ -1,8 +1,8 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-{% set language = "en" %}
+{% set language = "de" %}
 {% set sortattr = "sort" %}
 
-<html xml:lang="en" lang="en" dir="ltr" typeof="bibo:Document " about="" property="dcterms:language" content="en" prefix="dcterms: http://purl.org/dc/terms/ bibo: http://purl.org/ontology/bibo/ schema: http://schema.org/ w3p: http://www.w3.org/2001/02pd/rec54#" xmlns="http://www.w3.org/1999/xhtml">
+<html xml:lang="de" lang="de" dir="ltr" typeof="bibo:Document " about="" property="dcterms:language" content="de" prefix="dcterms: http://purl.org/dc/terms/ bibo: http://purl.org/ontology/bibo/ schema: http://schema.org/ w3p: http://www.w3.org/2001/02pd/rec54#" xmlns="http://www.w3.org/1999/xhtml">
 
 <head>
   {% set name = metadata.title|lower|replace(' ', '-') %}
@@ -51,7 +51,7 @@
   <div class="page">
     <div class="layout layout--wide">
       <div class="skiplink">
-        <a rel="nofollow noreferrer" href="#main">Skip this section and go to general content</a>
+        <a rel="nofollow noreferrer" href="#main">Überspringen Sie diesen Abschnitt und gehen Sie zum allgemeinen Inhalt.</a>
       </div>
     </div>
     <div class="page">
@@ -65,16 +65,16 @@
                 <dl>
                   <dt>Status</dt>
                   <dd><a href="{{metadata.status}}">{{metadata.status}}</a></dd>
-                  <dt>Published at</dt>
+                  <dt>Veröffentlicht am</dt>
                   <dd>{{metadata.issued}}</dd>
-                  <dt>This version</dt>
+                  <dt>Diese Version</dt>
                   <dd><a href="{{metadata.navigation.self}}">{{metadata.navigation.self}}</a></dd>
                   {% if metadata.navigation.next %}
-                  <dt>Next version</dt>
+                  <dt>Nächste Version</dt>
                   <dd><a href="{{metadata.navigation.next}}">{{metadata.navigation.next}}</a></dd>
                   {% endif %}
                   {% if metadata.navigation.prev %}
-                  <dt>Previous version</dt>
+                  <dt>Vorherige Version</dt>
                   <dd><a href="{{metadata.navigation.prev}}">{{metadata.navigation.prev}}</a></dd>
                   {% endif %}
                 </dl>
@@ -86,7 +86,7 @@
                   {% if role == "A" %}
                   {% set authors = contributors|sort(attribute='last_name') %}
                   {% if authors %}
-                  <dt>Authors</dt>
+                  <dt>Autoren</dt>
                   {% for author in authors %}
                   <dd inlist="" rel="foaf:maker" class="p-author h-card vcard">
                     <span typeof="foaf:Person">
@@ -107,7 +107,7 @@
                   {% elif role == "E" %}
                   {% set editors = contributors|sort(attribute='last_name') %}
                   {% if editors %}
-                  <dt>Editors</dt>
+                  <dt>Redakteure</dt>
                   {% for editor in editors %}
                   <dd inlist="" rel="bibo:editor" class="p-author h-card vcard">
                     <span typeof="foaf:Person">
@@ -128,7 +128,7 @@
                   {% elif role == "C" %}
                   {% set pure_contributors = contributors|sort(attribute='last_name') %}
                   {% if pure_contributors %}
-                  <dt>Reviewed and approved by</dt>
+                  <dt>Beitragende</dt>
                   {% for contributor in pure_contributors %}
                   <dd inlist="" rel="dcterms:contributor" class="p-author h-card vcard">
                     <span typeof="foaf:Person">
@@ -153,16 +153,16 @@
 
               <div class="head" role="metainfo" id="metainfo">
                 <dl>
-                  <dt>Source</dt>
+                  <dt>Quelle</dt>
                   <dd><a href="{{metadata.repositoryurl}}">{{metadata.repositoryurl}}</a></dd>
                   <dt>Changelog</dt>
                   <dd><a href="{{metadata.changelogurl}}">{{metadata.changelogurl}}</a></dd>
                   <dt>Feedback</dt>
                   <dd><a href="{{metadata.feedbackurl}}">{{metadata.feedbackurl}}</a></dd>
-                  {# <dt>Registry of specifications</dt>
+                  {# <dt>Spezifikationsregister</dt>
                   <dd><a href="{{metadata.standaardregisterurl}}">{{metadata.standaardregisterurl}}</a></dd> #}
 
-                  {# <dt>Dependencies</dt>
+                  {# <dt>Abhängigkeiten</dt>
                   <dd>
                     {% for dep in metadata.dependencies %}
                     <a href="{{ dep.packageurl }}">{{ dep.packagelabel }}</a>
@@ -183,7 +183,7 @@
           <div class="col--8-12 col--12-12--s">
 
             <div class="region region--no-space-top typography" id="summary">
-              <h2 class="h2" aria-level="1" role="heading" id="h2_sotd">Summary</h2>
+              <h2 class="h2" aria-level="1" role="heading" id="h2_sotd">Zusammenfassung</h2>
               {% block summary %}
               {% if metadata.description %}
               {{ metadata.description[language] }}
@@ -193,14 +193,13 @@
 
             <div class="region region--no-space-top typography" id="status">
               <section class="introductory" id="sotd" typeof="bibo:Chapter" resource="#ref" rel="bibo:Chapter">
-                <h2 class="h2" aria-level="1" role="heading" id="h2_sotd">Status of this document</h2>
+                <h2 class="h2" aria-level="1" role="heading" id="h2_sotd">Status dieses Dokuments</h2>
                 {% block status %}
                 <p>
-                  This application profile has the status <a href="{{metadata.status }}">{{ metadata.statuslabel }}</a> and was published at {{ metadata.issued }}.
+                  Diese Anwendungsprofil hat den Status <a href="{{metadata.status }}">{{ metadata.statuslabel }}</a> und wurde am {{ metadata.issued }} veröffentlicht.
                 </p>
                 {# <p>
-                  Information about the process and the decisions involved in the creation of this specification are consultable at the
-                  <a href="{{metadata.standaardregisterurl}}">registry of specifications</a>.
+                  Informationen über den Prozess und die getroffenen Entscheidungen bei der Erstellung dieser Spezifikation sind unter dem <a href="{{metadata.standaardregisterurl}}">Spezifikationsregister</a> abrufbar.
                 </p> #}
                 {% endblock %}
               </section>
@@ -209,35 +208,35 @@
             {# <div class="region" id="introduction">
               <div class="introduction typography">
                 {% block introduction %}
-                <p>This document describes an <strong>application profile</strong>, in this case <strong>{{ metadata.title }}</strong>.
-                  The application profile specifies a semantic data model covering a set of usecases.
-                  The specification consists of terms with their constraints (cardinalities, codelists, usage guidelines).
+                <p>Dieses Dokument beschreibt ein <strong>Anwendungsprofil</strong>, in diesem Fall <strong>{{ metadata.title }}</strong>.
+                Das Anwendungsprofil legt ein semantisches Datenmodell für eine Reihe von Anwendungsfällen fest.
+                Die Spezifikation besteht aus Begriffen mit ihren Einschränkungen (Kardinalitäten, Codelists, Verwendungshinweise).
                 </p>
                 {% endblock %}
               </div>
             </div> #}
 
             <div class="region region--no-space-top typography" id="conformance">
-              <h2 class="h2" id="conformance" aria-level="1" role="heading">Conformance</h2>
+              <h2 class="h2" id="conformance" aria-level="1" role="heading">Konformität</h2>
               {% block conformance %}
               <p>To be defined</p>
               {% endblock %}
             </div>
 
             {# <div class="region region--no-space-top typography" id="license">
-              <h2 class="h2">License</h2>
+              <h2 class="h2">Lizenz</h2>
               {% block license %}
-              <p><span rel="dct:type" property="dct:title" href="http://purl.org/dc/dcmitype/Text" xmlns:dct="http://purl.org/dc/terms/">This specification</span> of <a rel="cc:attributionURL" property="cc:attributionName" href="ORGANISATION" xmlns:cc="http://creativecommons.org/ns#">ORGANISATION</a> is published under <a href="{{ metadata.license }}" rel="license">"CC-BY 4.0"</a>.</p>
+              <p><span rel="dct:type" property="dct:title" href="http://purl.org/dc/dcmitype/Text" xmlns:dct="http://purl.org/dc/terms/">Diese Spezifikation</span> von <a rel="cc:attributionURL" property="cc:attributionName" href="ORGANISATION" xmlns:cc="http://creativecommons.org/ns#">ORGANISATION</a> wird unter <a href="{{ metadata.license }}" rel="license">"CC-BY 4.0"</a> veröffentlicht.</p>
               {% endblock %}
             </div> #}
 
             <div class="region region--no-space-top" id="overview">
-              <h2 class="h2">Overview</h2>
+              <h2 class="h2">Übersicht</h2>
               <div class="grid">
                 <div class="col--9-12 col--1-1--s typography">
                   {% if ( ( classes | length > 0) ) %}
                   <div class="region region--no-space-top">
-                    <p>This document describes the usage of the following entities for a correct usage of the application profile:
+                    <p>Dieses Dokument beschreibt die Verwendung der folgenden Entitäten für eine korrekte Anwendung des Anwendungsprofils:
                       <br>
                       |
                       {%- for class in classes |sort(attribute=sortattr) %}
@@ -248,7 +247,7 @@
                   {% endif %}
                   {% if ( ( datatypes | length ) > 0 ) %}
                   <div class="region region--no-space-top">
-                    <p>This document describes the usage of the following datatypes for a correct usage of the application profile:
+                    <p>Dieses Dokument beschreibt die Verwendung der folgenden Datentypen für eine korrekte Anwendung des Anwendungsprofils:
                       <br>
                       |
                       {%- for datatype in datatypes |sort(attribute=sortattr) %}
@@ -269,7 +268,7 @@
               {% endblock %}
             </div>
             <div class="region region--no-space-top">
-              <h2 class="h2">Entities</h2>
+              <h2 class="h2">Entitäten</h2>
             </div>
             {% for entity in classes | sort(attribute=sortattr) %}
             <div class="region region--no-space-top">
@@ -279,11 +278,11 @@
                   <dt>Definition</dt>
                   <dd>{{ entity.description[language] }}</dd>
                   {% if entity.usage[language] %}
-                  <dt>Usage</dt>
+                  <dt>Verwendung</dt>
                   <dd>{{ entity.usage[language] | safe }}</dd>
                   {% endif %}
                   {% if ((entity.parents | length) > 0 ) %}
-                  <dt>Subclass of
+                  <dt>Unterklasse von
                   <dt>
                   <dd>
                     {%- for parent in entity['parents'] %}
@@ -291,15 +290,15 @@
                     {%- endfor %}
                   </dd>
                   {% endif %}
-                  <dt>Properties</dt>
+                  <dt>Eigenschaften</dt>
                   {% if ((entity.properties | length) > 0 ) %}
-                  <dd>For this entity the following properties are defined:
+                  <dd>Für diese Entität sind die folgenden Eigenschaften definiert:
                     {%- for prop in entity['properties'] | sort(attribute=sortattr) %}
                     <a href="#{{ (entity.name ~ ':' ~ prop.name) | urlencode }}">{{ prop.label[language] }}</a>{% if not loop.last %}, {% endif %}
                     {%- endfor %}.
                   </dd>
                   {% else %}
-                  <dd>No properties have been defined for this entity.</dd>
+                  <dd>Für diese Entität wurden keine Eigenschaften definiert.</dd>
                   {% endif %}
                 </dl>
               </div>
@@ -308,11 +307,11 @@
                 <table class="data-table">
                   <thead>
                     <tr class="data-table__header">
-                      <th class="data-table__header-title--sortable data-table__header-title--sortable-active">Property</th>
-                      <th class="data-table__header-title--sortable">Expected Range</th>
-                      <th class="data-table__header-title--sortable">Cardinality</th>
+                      <th class="data-table__header-title--sortable data-table__header-title--sortable-active">Eigenschaft</th>
+                      <th class="data-table__header-title--sortable">Erwarteter Bereich</th>
+                      <th class="data-table__header-title--sortable">Kardinalität</th>
                       <th class="data-table__header-title--sortable">Definition</th>
-                      <th class="data-table__header-title--sortable">Usage</th>
+                      <th class="data-table__header-title--sortable">Verwendung</th>
                       <th class="data-table__header-title--sortable">Codelist</th>
                     </tr>
                   </thead>
@@ -350,7 +349,7 @@
 
             {% if  (( datatypes | length ) > 0 ) %}
             <div class="region region--no-space-top">
-              <h2 class="h2">Datatypes</h2>
+              <h2 class="h2">Datentypen</h2>
             </div>
             {% for entity in datatypes | sort(attribute=sortattr)%}
             <div class="region region--no-space-top">
@@ -364,11 +363,11 @@
                   <dt>Definition</dt>
                   <dd>{{ entity.description[language] }}</dd>
                   {% if entity.usage[language] %}
-                  <dt>Usage</dt>
+                  <dt>Verwendung</dt>
                   <dd>{{ entity.usage[language] | safe }}</dd>
                   {% endif %}
                   {% if ((entity.parents | length) > 0 ) %}
-                  <dt>Subclass of
+                  <dt>Unterklasse von
                   <dt>
                   <dd>
                     {%- for parent in entity['parents'] %}
@@ -376,15 +375,15 @@
                     {%- endfor %}
                   </dd>
                   {% endif %}
-                  <dt>Properties</dt>
+                  <dt>Eigenschaften</dt>
                   {% if ((entity.properties | length) > 0 ) %}
-                  <dd>For this datatype the following properties are defined:
+                  <dd>Für diesen Datentyp sind die folgenden Eigenschaften definiert:
                     {%- for prop in entity['properties'] | sort(attribute=sortattr) %}
                     <a href="#{{ (entity.name ~ ':' ~ prop.name) | urlencode }}">{{ prop.label[language] }}</a>{% if not loop.last %}, {% endif %}
                     {%- endfor %}.
                   </dd>
                   {% else %}
-                  <dd>No properties have been defined for this datatype.</dd>
+                  <dd>Für diesen Datentyp wurden keine Eigenschaften definiert.</dd>
                   {% endif %}
                 </dl>
               </div>
@@ -393,11 +392,11 @@
                 <table class="data-table">
                   <thead>
                     <tr class="data-table__header">
-                      <th class="data-table__header-title--sortable data-table__header-title--sortable-active">Property</th>
-                      <th class="data-table__header-title--sortable">Expected Range</th>
-                      <th class="data-table__header-title--sortable">Cardinality</th>
+                      <th class="data-table__header-title--sortable data-table__header-title--sortable-active">Eigenschaft</th>
+                      <th class="data-table__header-title--sortable">Erwarteter Bereich</th>
+                      <th class="data-table__header-title--sortable">Kardinalität</th>
                       <th class="data-table__header-title--sortable">Definition</th>
-                      <th class="data-table__header-title--sortable">Usage</th>
+                      <th class="data-table__header-title--sortable">Verwendung</th>
                       <th class="data-table__header-title--sortable">Codelist</th>
                     </tr>
                   </thead>
@@ -433,16 +432,16 @@
             {% endfor %}
             {% endif %}
             <div class="region region--no-space-top" id="codelists">
-              <h2 class="h2" aria-level="1" role="heading" id="h2_sotd">Lists</h2>
-              (non-normative)
+              <h2 class="h2" aria-level="1" role="heading" id="h2_sotd">Listen</h2>
+              (nicht normativ)
 
               {% block codelist %}
               {% endblock %}
             </div>
 
             <div class="region region--no-space-top" id="changelog">
-              <h2 class="h2" aria-level="1" role="heading" id="h2_sotd">Changelog w.r.t. previous version</h2>
-              (non-normative)
+              <h2 class="h2" aria-level="1" role="heading" id="h2_sotd">Changelog</h2>
+              (nicht normativ)
               {% block changelog %}
               <br>
               <p>placeholder</p>
@@ -450,16 +449,16 @@
             </div>
             <div class="region region--no-space-top" id="jsonld">
               <h2 class="h2" aria-level="1" role="heading" id="h2_sotd">JSON-LD context</h2>
-              (non-normative)
+              (nicht normativ)
               {% block jsonld %}
-              <p>A reusable JSON-LD context definition for this application profile is retrievable at: <a href="{{ documentroot }}/context/{{ metadata.filename }}.jsonld" target="_blank">{{ documentroot }}/context/{{ metadata.filename }}.jsonld</a></p>
+              <p>Eine wiederverwendbare JSON-LD-Kontextdefinition für dieses Anwendungsprofil ist abrufbar unter: <a href="{{ documentroot }}/context/{{ metadata.filename }}.jsonld" target="_blank">{{ documentroot }}/context/{{ metadata.filename }}.jsonld</a></p>
               {% endblock %}
             </div>
             <div class="region region--no-space-top" id="shacl">
               <h2 class="h2" aria-level="1" role="heading" id="h2_sotd">SHACL template</h2>
-              (non-normative)
+              (nicht normativ)
               {% block shacl%}
-              <p>A reusable SHACL template for this application profile is retrievable at: <a href="{{ documentroot }}/shacl/{{ metadata.filename }}-SHACL.ttl" target="_blank">{{ documentroot }}/shacl/{{ metadata.filename }}-SHACL.ttl</a></p>
+              <p>Eine wiederverwendbare SHACL-Vorlage für dieses Anwendungsprofil ist abrufbar unter: <a href="{{ documentroot }}/shacl/{{ metadata.filename }}-SHACL.ttl" target="_blank">{{ documentroot }}/shacl/{{ metadata.filename }}-SHACL.ttl</a></p>
               {% endblock %}
             </div>
           </div>
@@ -469,25 +468,25 @@
                 <div class="side-navigation__group">
                   <ul>
                     {# <li class="side-navigation__item">
-                      <a href="#introduction">Introduction</a>
+                      <a href="#introduction">Einleitung</a>
                     </li> #}
                     <li class="side-navigation__item">
-                      <a href="#summary">Summary</a>
+                      <a href="#summary">Zusammenfassung</a>
                     </li>
                     <li class="side-navigation__item">
-                      <a href="#status">Status of this document</a>
+                      <a href="#status">Status dieses Dokuments</a>
                     </li>
                     {# <li class="side-navigation__item">
-                      <a href="#license">License</a>
+                      <a href="#license">Lizenz</a>
                     </li> #}
                     <li class="side-navigation__item">
-                      <a href="#conformance">Conformance</a>
+                      <a href="#conformance">Konformität</a>
                     </li>
                     <li class="side-navigation__item">
-                      <a href="#overview">Overview</a>
+                      <a href="#overview">Übersicht</a>
                     </li>
                     <li class="side-navigation__item">
-                      <a href="#codelists">Lists</a>
+                      <a href="#codelists">Listen</a>
                     </li>
                     <li class="side-navigation__item">
                       <a href="#changelog">Changelog</a>
