@@ -45,11 +45,11 @@
   },
   {
     "urlref": "/thematic/models/cable-pipe",
-    "repository": "https://github.com/belgif/ICEGthema-hydrant",
+    "repository": "https://github.com/belgif/ICEGthema-imkl",
     "branchtag": "main",
     "name": "cable-pipe",
     "filename": "config/cable-pipe.json",
-    "dummy": "002",
+    "dummy": "001",
     "navigation": {}
   },
   {
