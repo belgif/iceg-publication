@@ -40,7 +40,16 @@
     "branchtag": "main",
     "name": "hydrant",
     "filename": "config/hydrant.json",
-    "dummy": "0001",
+    "dummy": "001",
+    "navigation": {}
+  },
+  {
+    "urlref": "/thematic/models/cable-pipe",
+    "repository": "https://github.com/belgif/ICEGthema-hydrant",
+    "branchtag": "main",
+    "name": "cable-pipe",
+    "filename": "config/cable-pipe.json",
+    "dummy": "001",
     "navigation": {}
   },
   {
