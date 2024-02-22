@@ -35,6 +35,15 @@
     "navigation": {}
   },
   {
+    "urlref": "/thematic/models/hydrant",
+    "repository": "https://github.com/belgif/ICEGthema-hydrant",
+    "branchtag": "main",
+    "name": "hydrant",
+    "filename": "config/hydrant.json",
+    "dummy": "0001",
+    "navigation": {}
+  },
+  {
     "urlref": "/thematic/models/public-organisation",
     "repository": "https://github.com/bertvannuffelen/semiceuthema",
     "branchtag": "master",
