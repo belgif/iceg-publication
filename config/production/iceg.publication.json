@@ -31,6 +31,7 @@
     "branchtag": "main",
     "name": "building",
     "filename": "config/building.json",
+    "disabled": true,
     "dummy": "022",
     "navigation": {}
   },
@@ -40,6 +41,7 @@
     "branchtag": "main",
     "name": "hydrant",
     "filename": "config/hydrant.json",
+    "disabled": true,
     "dummy": "001",
     "navigation": {}
   },
@@ -49,6 +51,7 @@
     "branchtag": "main",
     "name": "cable-pipe",
     "filename": "config/cable-pipe.json",
+    "disabled": true,
     "dummy": "003",
     "navigation": {}
   },
