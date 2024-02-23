@@ -51,8 +51,8 @@
     "branchtag": "main",
     "name": "cable-pipe",
     "filename": "config/cable-pipe.json",
-    "disabled": true,
-    "dummy": "003",
+    "disabled": false,
+    "dummy": "001",
     "navigation": {}
   },
   {
