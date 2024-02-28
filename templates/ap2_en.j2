@@ -286,7 +286,6 @@
                   <dt>Subclass of</dt>
                   <dd>
                     {%- for parent in entity['parents'] %}
-                    {{ parent | dump }}
                     <a href="{{ parent.scoped_uri}}">{{ parent.label }}</a>{% if not loop.last %}, {% endif %}
                     {%- endfor %}
                   </dd>

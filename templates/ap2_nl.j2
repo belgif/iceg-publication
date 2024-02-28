@@ -286,6 +286,7 @@
                   <dt>Subklasse van</dt>
                   <dd>
                     {%- for parent in entity['parents'] %}
+                    {{ entity | dump }}
                     <a href="{{ parent.scoped_uri}}">{{ parent.label }}</a>{% if not loop.last %}, {% endif %}
                     {%- endfor %}
                   </dd>
