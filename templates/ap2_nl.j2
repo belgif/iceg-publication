@@ -286,7 +286,7 @@
                   <dt>Subklasse van</dt>
                   <dd>
                     {%- for parent in entity['parents'] %}
-                    <a href="{{ parent.scoped_uri}}">{{ parent.label[language] }}</a>{% if not loop.last %}, {% endif %}
+                    <a href="{{ parent.scoped_uri}}">{{ parent.label }}</a>{% if not loop.last %}, {% endif %}
                     {%- endfor %}
                   </dd>
                   {% endif %}
@@ -298,7 +298,7 @@
                     {%- endfor %}.
                   </dd>
                   {% else %}
-                  <dd>>Voor deze entiteit zijn geen eigenschappen gedefinieerd.</dd>
+                  <dd>Voor deze entiteit zijn geen eigenschappen gedefinieerd.</dd>
                   {% endif %}
                 </dl>
               </div>

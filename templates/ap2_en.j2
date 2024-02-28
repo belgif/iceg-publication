@@ -286,7 +286,12 @@
                   <dt>Subclass of</dt>
                   <dd>
                     {%- for parent in entity['parents'] %}
-                    <a href="{{ parent.scoped_uri}}">{{ parent.label[language] }}</a>{% if not loop.last %}, {% endif %}
+                    <ul>
+                      {% for attribute, value in parent.__dict__.items() %}
+                      <li>{{ attribute }}: {{ value }}</li>
+                      {% endfor %}
+                    </ul>
+                    <a href="{{ parent.scoped_uri}}">{{ parent.label }}</a>{% if not loop.last %}, {% endif %}
                     {%- endfor %}
                   </dd>
                   {% endif %}
@@ -347,7 +352,7 @@
             </div>
             {% endfor %}
 
-            {% if  (( datatypes | length ) > 0 ) %}
+            {% if (( datatypes | length ) > 0 ) %}
             <div class="region region--no-space-top">
               <h2 class="h2">Datatypes</h2>
             </div>
