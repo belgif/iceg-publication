@@ -286,11 +286,7 @@
                   <dt>Subclass of</dt>
                   <dd>
                     {%- for parent in entity['parents'] %}
-                    <ul>
-                      {% for attribute, value in parent.__dict__.items() %}
-                      <li>{{ attribute }}: {{ value }}</li>
-                      {% endfor %}
-                    </ul>
+                    {{ parent | dump }}
                     <a href="{{ parent.scoped_uri}}">{{ parent.label }}</a>{% if not loop.last %}, {% endif %}
                     {%- endfor %}
                   </dd>
