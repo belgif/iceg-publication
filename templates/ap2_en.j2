@@ -283,11 +283,10 @@
                   <dd>{{ entity.usage[language] | safe }}</dd>
                   {% endif %}
                   {% if ((entity.parents | length) > 0 ) %}
-                  <dt>Subclass of
-                  <dt>
+                  <dt>Subclass of</dt>
                   <dd>
                     {%- for parent in entity['parents'] %}
-                    <a href="{{ parent.scoped_uri}}">{{ parent.label }}</a>{% if not loop.last %}, {% endif %}
+                    <a href="{{ parent.scoped_uri}}">{{ parent.label[language] }}</a>{% if not loop.last %}, {% endif %}
                     {%- endfor %}
                   </dd>
                   {% endif %}
