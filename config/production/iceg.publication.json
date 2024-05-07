@@ -42,7 +42,7 @@
     "name": "hydrant",
     "filename": "config/hydrant.json",
     "disabled": true,
-    "dummy": "001",
+    "dummy": "002",
     "navigation": {}
   },
   {
