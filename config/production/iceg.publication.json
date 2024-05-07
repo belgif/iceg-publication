@@ -41,8 +41,8 @@
     "branchtag": "main",
     "name": "hydrant",
     "filename": "config/hydrant.json",
-    "disabled": true,
-    "dummy": "002",
+    "disabled": false,
+    "dummy": "003",
     "navigation": {}
   },
   {
