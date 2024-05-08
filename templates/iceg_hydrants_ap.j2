@@ -83,7 +83,7 @@
                           {% if role == "A" %}
                             {% set authors = contributors|sort(attribute='last_name') %}
                         {% if authors %}
-                          <dt>Authors</dt>
+                          <dt>Business Sponsor</dt>
                           {% for author in authors %}
                           <dd inlist="" rel="foaf:maker" class="p-author h-card vcard">
                               <span typeof="foaf:Person">
@@ -125,7 +125,7 @@
                       {% elif role == "C" %}
                         {% set pure_contributors = contributors|sort(attribute='last_name') %}
                         {% if pure_contributors %}
-                        <dt>Reviewed by</dt>
+                        <dt>Contributors</dt>
                           {% for contributor in pure_contributors %}
                           <dd inlist="" rel="dcterms:contributor" class="p-author h-card vcard">
                               <span typeof="foaf:Person">
