@@ -5,7 +5,7 @@
     "name": "person",
     "filename": "config/eap-mapping.json",
     "disabled": false,
-    "dummy": "000",
+    "dummy": "001",
     "navigation": {}
   },
   {
