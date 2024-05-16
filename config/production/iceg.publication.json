@@ -1,19 +1,11 @@
 [  {
     "urlref": "/thematic/models/person",
-    "repository": "https://github.com/bertvannuffelen/semiceuthema",
-    "branchtag": "master",
-    "name": "iceg-person-ap",
-    "filename": "config/iceg-person.json",
-    "disabled": true,
-    "navigation": {}
-  },
-  {
-    "urlref": "/thematic/models/person-voc",
-    "repository": "https://github.com/bertvannuffelen/semiceuthema",
-    "branchtag": "master",
-    "name": "iceg-person-voc",
-    "filename": "config/iceg-person.json",
-    "disabled": true,
+    "repository": "https://github.com/belgif/ICEGthema-person",
+    "branchtag": "main",
+    "name": "person",
+    "filename": "config/eap-mapping.json",
+    "disabled": false,
+    "dummy": "000",
     "navigation": {}
   },
   {
